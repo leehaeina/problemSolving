@@ -15,4 +15,4 @@ function solution(number, k) {
     return answer;
 }
 
-console.log(solution("4177252841",4));
+console.log(solution("1924",2));
