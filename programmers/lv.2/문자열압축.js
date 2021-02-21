@@ -24,7 +24,6 @@ function solution(s) {
         } //n개만큼 자른 문자가 반복되지 않는 경우
         else {
           temp_str += count > 1 ? count + cut_str : cut_str; //count 갯수를 기준으로 압축 문자 or 기존 문자 저장
-  
           cut_str = str; //기준 문자열을 새로운 n개만큼 자른 문자로 대체
           count = 1; //count 갯수 초기화
         }
