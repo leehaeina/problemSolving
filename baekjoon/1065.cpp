@@ -21,7 +21,7 @@ int main()
 bool hansu(int num)
 {
 
-	if (num < 100) return true;
+	if (num < 100) return true;x
 	else
 	{
 		vector<int> v;
