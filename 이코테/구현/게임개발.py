@@ -1,6 +1,6 @@
 n,m = map(int,input().split())
 x,y,direction = map(int,input().split())
-array = [[0]*m for in range(n)]
+array = [[0]*m for _ in range(n)]
 data = []
 for _ in range(n):
     data.append(list(map(int,input().split())))
