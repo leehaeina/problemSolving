@@ -2,7 +2,8 @@ n = int(input())
 k = int(input())
 apple = []
 for _ in range(k):
-    apple.append(list(map(int,input().split())))
+    apple_temp = list(map(int,input().split()))
+    apple.append([apple_temp[0]-1,apple_temp[1]-1])
 l = int(input())
 time = []
 command = []
