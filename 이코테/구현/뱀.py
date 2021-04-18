@@ -24,17 +24,17 @@ while True:
     nx = x+rotate[direction][0]
     ny = y+rotate[direction][1]
     count += 1
-    if(nx<0 or ny<0 or nx>=n or ny>=n):
+    if(nx<0 or ny<0 or nx>=n or ny>=n): #벽이랑 부딪힘
         break
-    elif (snake[nx][ny] == 1):
+    elif (snake[nx][ny] == 1): # 뱀이랑 부딪힘
         break
-    elif([nx,ny] in apple):
+    elif([nx,ny] in apple): # 종료 안할때, 사과를 냠
         apple.remove([nx,ny])
-        if(tx == -1):
+        if(tx == -1): # 사과 처음 먹을때 테일 설정 사과 계속 먹는 중이면 테일 그대로라서 다시 안함 
             tx = x
             ty = y
-    elif(tx != 1):
-        snake[tx][ty] = 0
+    elif(tx != 1): # 사과 없는데 꼬리 있을때
+        snake[tx][ty] = 0 # 꼬리를 자르기!
         
         tx = x
         ty = y

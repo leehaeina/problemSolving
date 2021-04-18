@@ -10,4 +10,3 @@ for item in data[1:]:
         result =result* item
         
 print(result)
-    
