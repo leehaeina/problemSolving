@@ -17,4 +17,14 @@ function solution(A, B) {
     }
     return answer;
 }
-console.log(solution([5,6,7,8],	[3,4,5,6]))
+var obj = {
+    a: 1, 
+    b: 2, 
+    c: 3
+};
+
+for (var prop in obj) {
+    console.log(prop, obj[prop]); // a 1, b 2, c 3
+}
+
+
