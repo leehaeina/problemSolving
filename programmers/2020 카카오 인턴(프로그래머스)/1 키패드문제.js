@@ -38,7 +38,6 @@ function solution(numbers, hand) {
                     left = cur
                     return acc +'L'
                 }
-               
             }
             else{
                 left =cur
