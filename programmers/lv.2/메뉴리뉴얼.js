@@ -3,47 +3,47 @@ function combination(arr, selectNum) {
   if (selectNum === 1) {
     return arr.map((x) => [x]);
   } else {
-    arr.forEach((v, i) => {
-      let fixer = v;
-      let rest = arr.slice(i + 1);
-      let combiArr = combination(rest, selectNum - 1);
-      let combin = combiArr.map((x) => [fixer, ...x]);
-      result.push(...combin);
+    arr.forEach((element, idx) => {
+      let fixer = element;
+      let restArr = arr.slice(idx + 1);
+      let combinationArr = combination(restArr, selectNum - 1);
+      let combined = combinationArr.map((x) => [fixer, ...x]);
+      result.push(...combined);
     });
-    return result.sort();
   }
+  return result;
 }
-// function combination(arr, selectNum) {
-//     const result = [];
-//     if (selectNum === 1) return arr.map((v) => [v]);
-//     arr.forEach((v, idx, arr) => {
-//       const fixed = v;
-//       const restArr = arr.slice(idx + 1); //선택한 모든것은 빼야해서 뒤로만!
-//       const combinationArr = combination(restArr, selectNum - 1);
-//       const combineFix = combinationArr.map((v) => [fixed, ...v]);
-//       result.push(...combineFix);
-//     });
-//     return result;
-//   }
+function inputMap(map, menuList) {
+  menuList.reduce((_, menu) => {
+    menu = menu.sort().join("");
+    if (map[menu]) {
+      map[menu]++;
+    } else {
+      map[menu] = 1;
+    }
+  }, []);
+  return map;
+}
 function solution(orders, course) {
   var answer = [];
-  let foods = [];
-  let count = [];
+  let mapArr = Array(course.length).fill({});
   for (let i = 0; i < orders.length; i++) {
-    for (let j = 0; j < course; j++) {
-        let map = {}
-      let combi = combination(orders[i].split(""), course[j]);
-      for(let x = 0; x<combi.length;x++)
-      {
-          if(map[combi[x]]) map[combi[x]]++;
-          else map[combi[x]] = 1
-      }
-      
+    for (let j = 0; j < course.length; j++) {
+      mapArr[j] = {
+        ...inputMap(
+          { ...mapArr[j] },
+          combination(orders[i].split(""), course[j])
+        ),
+      };
     }
   }
-
-  return answer;
+  for (let i = 0; i < mapArr.length; i++) {
+    let max = Math.max(...Object.values(mapArr[i]));
+    answer.push(
+      ...Object.entries(mapArr[i])
+        .filter((x) => x[1] === max && x[1] > 1)
+        .map((x) => x[0])
+    );
+  }
+  return answer.sort();
 }
-console.log(
-  solution(["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"], [2, 3, 4])
-);
