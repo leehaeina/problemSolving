@@ -1,16 +1,29 @@
 const resultSet = new Set();
-const dfs = (caseArray, level, caseSet) => {
+const result = [];
+// const dfs = (caseArray, level, caseSet) => {
+//   if (level === caseArray.length) {
+//     return resultSet.add([...caseSet].sort().join(""));
+//   } else {
+//     caseArray[level].reduce((_, v, i) => {
+//       let next = new Set([...caseSet, v]);
+//       if (next.size !== caseSet.size) {
+//         dfs(caseArray, level + 1, next);
+//       }
+//     }, "");
+//   }
+// };
+function dfs(caseArray, level, caseSet) {
   if (level === caseArray.length) {
-    return resultSet.add([...caseSet].sort().join(""));
+    //caseArray 는 안바뀜. 이 배열크기만큼 === 하나씩 배열에서 다뽑으면 끝남
+    result.push([...caseSet]);
+    return;
   } else {
     caseArray[level].reduce((_, v, i) => {
-      let next = new Set([...caseSet, v]);
-      if (next.size !== caseSet.size) {
-        dfs(caseArray, level + 1, next);
-      }
+      let next = [...caseSet, v];
+      dfs(caseArray, level + 1, next);
     }, "");
   }
-};
+}
 function solution(user_id, banned_id) {
   var answer = 0;
   let candidate_id = [];
@@ -20,8 +33,14 @@ function solution(user_id, banned_id) {
 
     candidate_id.push(user_id.filter((x) => x.match(regex)));
   });
+  console.log(candidate_id);
+  dfs(candidate_id, 0, []);
 
-  dfs(candidate_id, 0, new Set());
-
-  return resultSet.size;
+  return result;
 }
+console.log(
+  solution(
+    ["frodo", "fradi", "crodo", "abc123", "frodoc"],
+    ["fr*d*", "*rodo", "******", "******"]
+  )
+);

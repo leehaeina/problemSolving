@@ -134,3 +134,53 @@ function recur(count, sum) {
   recur(count + 1, sum + arr[count]);
   recur(count + 1, sum - arr[count]);
 }
+
+//여러배열에서 조합하기
+const result = [];
+const dfs = (caseArray, level, caseSet) => {
+  if (level === caseArray.length) {
+    return result.push([...caseSet]);
+  } else {
+    caseArray[level].reduce((_, v, i) => {
+      let next = [...caseSet, v];
+      dfs(caseArray, level + 1, next);
+    }, "");
+  }
+};
+dfs(
+  [
+    [a, b, c],
+    [a, c, b],
+    [f, g, h],
+  ],
+  0,
+  []
+);
+//result 가 결과배열이 된다.
+result = [];
+function dfs(caseArray, level, caseSet) {
+  if (level === caseArray.length) {
+    //caseArray 는 안바뀜. 이 배열크기만큼 === 하나씩 배열에서 다뽑으면 끝남
+    return result.push([...caseSet]);
+  } else {
+    caseArray[level].reduce((_, v, i) => {
+      let next = [...caseSet, v];
+      dfs(caseArray, level + 1, next);
+    }, "");
+  }
+}
+
+// 배열들 중에 중복 안돼
+var resultSet = new Set();
+function dfs(caseArr, level, caseSet) {
+  if (level === caseArr.length) {
+    return result.add([...caseSet].sort().join(""));
+  } else {
+    caseArr[level].reduce((_, v, i) => {
+      let next = new Set([...caseSet, v]);
+      if (next.size !== caseSet.size) {
+        dfs(caseArr, level + 1, next);
+      }
+    });
+  }
+}
