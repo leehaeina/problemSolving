@@ -2,6 +2,8 @@ function solution(lines) {
   var answer = 0;
   let timeArr = [];
   let totalList = [];
+  //* timeArr는 모든 실행을 시작과 끝으로 나눠서 짝맞춰 넣은 배열
+  //* totalList는 모든 실행의 시작과 끝을 넣은 배열 => 이때 데이터가 변하므로 그부분 조사!
   timeArr = lines.reduce((acc, line, i) => {
     let x = line.split(" ");
     let time = Number(x.pop().slice(0, -1));
@@ -12,15 +14,14 @@ function solution(lines) {
     acc.push([start, end]);
     return acc;
   }, []);
-  let max = 0;
   let count = 0;
-  let left = [];
-  let last;
-  totalList.sort((a, b) => a - b);
   for (let i = 0; i < totalList.length; i++) {
+      //* now는 1초 계산의 시작부분, last는 끝나는 부분
     let now = totalList[i];
     let last = now + 999;
-
+    //* 1.1초 사이에 프로세스가 시작할때
+    //* 2.1초 사이에 프로세스가 끝날때
+    //* 3.프로세스가 1초를 품고있을때 
     count = timeArr.filter(
       (x) =>
         (x[0] >= now && x[0] <= last) ||
