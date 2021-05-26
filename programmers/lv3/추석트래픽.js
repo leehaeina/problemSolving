@@ -16,12 +16,12 @@ function solution(lines) {
   }, []);
   let count = 0;
   for (let i = 0; i < totalList.length; i++) {
-      //* now는 1초 계산의 시작부분, last는 끝나는 부분
+    //* now는 1초 계산의 시작부분, last는 끝나는 부분
     let now = totalList[i];
     let last = now + 999;
     //* 1.1초 사이에 프로세스가 시작할때
     //* 2.1초 사이에 프로세스가 끝날때
-    //* 3.프로세스가 1초를 품고있을때 
+    //* 3.프로세스가 1초를 품고있을때
     count = timeArr.filter(
       (x) =>
         (x[0] >= now && x[0] <= last) ||
@@ -59,3 +59,5 @@ let arr = [
   [0, 1],
 ];
 console.log(arr.filter((x) => x[1] >= 2 || x[0] < 0));
+console.log(new Date("12-12-12 20:13:00").getUTCHours());
+console.log(new Date("2016-09-15 01:00:04.001"));
