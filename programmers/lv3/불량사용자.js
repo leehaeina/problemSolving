@@ -1,17 +1,6 @@
 const resultSet = new Set();
 const result = [];
-// const dfs = (caseArray, level, caseSet) => {
-//   if (level === caseArray.length) {
-//     return resultSet.add([...caseSet].sort().join(""));
-//   } else {
-//     caseArray[level].reduce((_, v, i) => {
-//       let next = new Set([...caseSet, v]);
-//       if (next.size !== caseSet.size) {
-//         dfs(caseArray, level + 1, next);
-//       }
-//     }, "");
-//   }
-// };
+
 function dfs(caseArray, level, caseSet) {
     if (level === caseArray.length) {
         //caseArray 는 안바뀜. 이 배열크기만큼 === 하나씩 배열에서 다뽑으면 끝남
@@ -27,6 +16,7 @@ function dfs(caseArray, level, caseSet) {
 function solution(user_id, banned_id) {
     var answer = 0;
     let candidate_id = [];
+    
     banned_id = banned_id.map((x) => x.replace(/\*/g, "[a-z0-9]"));
     console.log(banned_id);
     banned_id.forEach((element) => {
@@ -46,9 +36,3 @@ console.log(
     )
 );
 
-let str = "fanch";
-let arr = [];
-for(let i = 0; i<str.length;i++)
-{
-    if(str.slice())
-}
