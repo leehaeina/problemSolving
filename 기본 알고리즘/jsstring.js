@@ -37,6 +37,9 @@ let str_splice = "0123456789".split("");
 let spliced = str_splice.splice(3, 5, "a", "b"); //! 3부터 5개를 자르고 그 자리에 'a','b'가 들어간다.
 console.log(str_splice, spliced);
 
+//!replace(str,str1)
+//?원본 안바뀜 
+//? 정규표현식 가smd!
 
 
 //TODO 결론 : 자를땐 slice(start,end) or substr(start,length) => 원본배열은 안바뀐다.
