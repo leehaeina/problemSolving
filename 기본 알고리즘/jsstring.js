@@ -38,9 +38,15 @@ let spliced = str_splice.splice(3, 5, "a", "b"); //! 3부터 5개를 자르고 �
 console.log(str_splice, spliced);
 
 //!replace(str,str1)
-//?원본 안바뀜 
-//? 정규표현식 가smd!
-
+//?원본 안바뀜
+//? 정규표현식 가능!
+//? string만 가능! 배열 불가능
+let str_replace = "123456";
+let replaced = str_replace.replace("123", "012");
+console.log(str_replace, replaced);
+str_replace = str_replace + str_replace;
+console.log(str_replace.replace(/123/g, "012"));
+let arr = str_replace.split("");
 
 //TODO 결론 : 자를땐 slice(start,end) or substr(start,length) => 원본배열은 안바뀐다.
 //TODO  splice는 배열에서만 가능, 원본배열 바뀐다!
