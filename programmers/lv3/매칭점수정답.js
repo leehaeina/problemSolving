@@ -23,7 +23,7 @@ function solution(word, pages) {
         const outLinks = body
             .flatMap((str) => str.match(REGEX_URL)) //body각 줄에 a tag 있는지 확인 없으면 null
             .filter((e) => e) //null 지우기
-            .map((e) => e.substr(8, e.length)); //
+            .map((e) => e.substr(8, e.length)); //<a href= 이거지우기
 
         pageInfo.set(pageURL, { point, outLinks, idx, matchPoint: 0 });
     });
