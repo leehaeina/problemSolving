@@ -1,10 +1,10 @@
 function solution(s) {
   var answer = [];
   s.reduce((_, str) => {
-    let str110 = "";
-    let start11 = 0;
-
+    let str110 = ""; //! 110 모으는 배열
+    let start11 = 0; 
     let stack = [];
+    
     for (let i = 0; i < str.length; i++) {
       if (
         str[i] === "0" &&

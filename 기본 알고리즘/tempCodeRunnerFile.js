@@ -1,4 +1,3 @@
-
-let arr = [];
-let str = "1 2 3 4";
-console.log(str.split(" ").map((x) => +x));
+let str_splice = "0123456789".split("");
+let spliced = str_splice.splice(3, 5, "a", "b");
+console.log(str_splice, spliced);
