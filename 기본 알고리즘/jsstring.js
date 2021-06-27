@@ -5,6 +5,8 @@
 let str = "0123456789";
 let a = str.substr(0, 1);
 console.log(a, str); //! a는 0부터 1개 잘라짐, 원본 문자열은 그대로임
+let b = str.substr(3,2);
+console.log(b)
 let last = str.substr(str.length - 1, 3);
 //! 끝에서 부터 3개 해도 끝이 마지막이라 마지막 문자 1개밖에 리턴 안됨
 console.log(last, str);

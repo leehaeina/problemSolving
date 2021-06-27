@@ -1,7 +1,5 @@
-let str_replace = "123456";
-let replaced = str_replace.replace("123", "012");
-console.log(str_replace, replaced);
-str_replace = str_replace + str_replace;
-console.log(str_replace.replace(/123/g, "012"));
-let arr = str_replace.split("");
-console.log(arr.replace("1", "a"));
+let str = "0123456789";
+let a = str.substr(0, 1);
+console.log(a, str); //! a는 0부터 1개 잘라짐, 원본 문자열은 그대로임
+let b = str.substr(3,2);
+console.log(b)
