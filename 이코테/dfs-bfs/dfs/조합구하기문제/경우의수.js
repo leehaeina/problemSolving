@@ -12,6 +12,7 @@ function permutation(arr, selectNum) {
   });
   return result;
 }
+
 //조합
 function combination(arr, selectNum) {
   const result = [];
