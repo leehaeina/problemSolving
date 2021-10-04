@@ -17,7 +17,7 @@ function solution(N, road, K) {
       let next = graph[town].reduce((a, c, i) => {
         if (c != Infinity) a.push(i);
         return a;
-      }, []);
+      }, []);z
     
       for (let i = 0; i < next.length; i++) {
         if (solution[next[i]] > solution[town] + graph[town][next[i]]) {

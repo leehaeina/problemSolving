@@ -13,6 +13,19 @@ function permutation(arr, selectNum) {
   return result;
 }
 
+function pe(arr,selectNum){
+  let result = [];
+  if(selectNum===1) return arr.map(x=>[x]);
+  arr.forEach((v,index,arr)=>{
+    const fixer = v;
+    const restArr = arr.filter((_,i)=>i!===index);
+    const permu = pe(restArrm,selectNum-1);
+    const comined = permu.map(x=>[fixer,...x]);
+    result.push(...comined);
+
+  })
+  return result;
+}
 //조합
 function combination(arr, selectNum) {
   const result = [];

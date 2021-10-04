@@ -26,7 +26,7 @@ while(q.length){
         else if(graph[nx][ny]>1) break;
         else{
             graph[nx][ny] = graph[x][y] + 1;
-            q.push([nx,ny])
+            q.push([nx,ny]);
         }
     }
 }

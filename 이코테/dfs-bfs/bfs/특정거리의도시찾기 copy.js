@@ -32,7 +32,7 @@ while(q.length){
         }
     },[])
 }
-console.log(distance)
+console.log(distance);
 let check = false;
 distance.reduce((acc,cur,index)=>{
     if(cur === k) {check = true;console.log("index",index)
