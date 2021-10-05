@@ -69,3 +69,4 @@ print(answer)
 # if not 쓸수있구,
 # index out of range 방지하기 위해 if(i<0 and graph[i])쓰면 됨
 # roads = list(map(list,zip(*roads))) <- 이걸로 배열 행열 뒤바꾸기 가능!~
+# 1시간 반정도 걸림 (? now가 큰걸만날때, 작은걸만날때 now갱신의 차이를 두지않았음!)
