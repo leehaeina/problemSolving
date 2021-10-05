@@ -64,3 +64,8 @@ answer += solution()
 roads = list(map(list,zip(*roads)))
 answer += solution()
 print(answer)
+
+# 파이썬은 배열 인덱스 마이너스가 가능함..!
+# if not 쓸수있구,
+# index out of range 방지하기 위해 if(i<0 and graph[i])쓰면 됨
+# roads = list(map(list,zip(*roads))) <- 이걸로 배열 행열 뒤바꾸기 가능!~
