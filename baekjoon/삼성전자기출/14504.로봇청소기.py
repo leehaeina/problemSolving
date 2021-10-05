@@ -42,3 +42,4 @@ print(count)
 # for i 돌리는데 rd -= i로 안하고 rd-=1로 계속함
 # index out of range신경쓰기 
 # 후진할 때는 방향 전환안하는데 전환시킴 
+# first : 15min, last : 40min

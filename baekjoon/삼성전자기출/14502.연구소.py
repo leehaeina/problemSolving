@@ -59,3 +59,5 @@ for i in range(len(wallArr)):
             copyArr[wall[j][0]][wall[j][1]] = 1
     answer.append(virus())
 print(max(answer))
+
+# python으로 안되고 pypy로 돌리면 됨..
