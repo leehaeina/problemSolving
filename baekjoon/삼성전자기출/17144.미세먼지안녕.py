@@ -32,7 +32,7 @@ def air(newRoom):
                 if(i<airs):
                     room[i][j] = newRoom[i-1][j]
                 elif(i>airs+1):
-                    room[i][j] = newRoom[i-1][j]
+                    room[i][j] = newRoom[i+1][j]
             else : room[i][j] = newRoom[i][j]
 def dust():
     newRoom = [[0] * c for _ in range(r)]
@@ -63,8 +63,8 @@ for i in range(t):
     dust()
 answer = 0
 #print() 
+
 for i in range(r):
-    #print(room[i])
     for j in range(c):
         if not(room[i][j] == -1):
             answer += room[i][j]
