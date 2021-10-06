@@ -70,4 +70,5 @@ for i in range(r):
             answer += room[i][j]
 print(answer)
 
-                
+# 1시간 반 걸림.. ㅜㅜ
+# 35line 에서 + - 반대라서 틀린건데 모르겠어서 다 탐색하느라 망함.. ㅜㅜ
