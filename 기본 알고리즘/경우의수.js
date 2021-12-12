@@ -73,7 +73,7 @@ function permutation(arr, selectNum) {
     });
     return result;
 }
-
+console.log(permutation([1,2,3,4,5,6,7,8,9,10],10))
 //조합 간단히 dfs로
 let answer = [];
 

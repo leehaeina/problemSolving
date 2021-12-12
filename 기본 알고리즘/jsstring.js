@@ -28,7 +28,8 @@ console.log("substring", first, str_substring); //! 01
 let str_slice = "0123456789";
 let sliced = str_slice.slice(-2); //!뒤에서부터 2개
 console.log(sliced, str_slice); //89
-console.log(str_slice.slice(1, -4));
+console.log("slice",str_slice.slice(1, -4));//12345
+console.log(str_slice.slice(0,-1)) //012345678
 
 //!splice(start,deleteCount,item1...)
 //? 배열만 가능!!! 스트링 불가능
